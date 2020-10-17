@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:html' as html;
 import 'package:http/http.dart' as http;
 import 'package:csv/csv.dart';
 import 'package:flutter/cupertino.dart';
@@ -97,13 +96,13 @@ class ReportCard extends StatelessWidget {
     rows.add(columns);
     final res = ListToCsvConverter().convert(rows);
 
-    try {
-      String url = "data:application/octet-stream;charset=utf-8;,$res";
-      html.AnchorElement anchorElement = new html.AnchorElement(href: url);
-      anchorElement.setAttribute("download", "report.csv");
-      anchorElement.click();
-    } catch (e) {
-      print(e);
-    }
+    // try {
+    //   String url = "data:application/octet-stream;charset=utf-8;,$res";
+    //   html.AnchorElement anchorElement = new html.AnchorElement(href: url);
+    //   anchorElement.setAttribute("download", "report.csv");
+    //   anchorElement.click();
+    // } catch (e) {
+    //   print(e);
+    // }
   }
 }
