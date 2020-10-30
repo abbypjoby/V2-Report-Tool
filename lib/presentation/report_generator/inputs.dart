@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../model.dart';
+import '../../model.dart';
 
-class FetchInputs extends StatefulWidget {
-  @override
-  _FetchInputsState createState() => _FetchInputsState();
-}
-
-class _FetchInputsState extends State<FetchInputs> {
+class FetchInputs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool isScreenWide = MediaQuery.of(context).size.width >= 700;
@@ -38,10 +33,7 @@ class _FetchInputsState extends State<FetchInputs> {
             ),
             Expanded(
               child: TextField(
-                onChanged: (value) {
-                  Provider.of<Model>(context, listen: false)
-                      .setStartDate(value);
-                },
+                onChanged: (value) {},
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Start Date (yyyy-mm-dd)',
@@ -53,9 +45,7 @@ class _FetchInputsState extends State<FetchInputs> {
             ),
             Expanded(
               child: TextField(
-                onChanged: (value) {
-                  Provider.of<Model>(context, listen: false).setEndDate(value);
-                },
+                onChanged: (value) {},
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'End Date (yyyy-mm-dd)',

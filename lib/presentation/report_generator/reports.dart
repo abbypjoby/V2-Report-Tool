@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:csv/csv.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -13,8 +12,8 @@ class ReportList extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     return Expanded(
       child: Container(
-        padding: EdgeInsets.only(top: 25),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.only(top: 25),
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
@@ -49,27 +48,27 @@ class ReportCard extends StatelessWidget {
       },
       child: Container(
         height: 150,
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          gradient: new LinearGradient(
+          gradient: const LinearGradient(
             colors: [Colors.lightBlueAccent, Colors.blueAccent],
             begin: Alignment.topLeft,
           ),
         ),
         child: Column(
           children: [
-            Icon(
+            const Icon(
               Icons.download_sharp,
               color: Colors.white,
               size: 60,
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Text(
               '''${Provider.of<Model>(context).groupId} $cardName ''',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
@@ -82,7 +81,7 @@ class ReportCard extends StatelessWidget {
   }
 
   void downloadExcel() async {
-    var columns = new List();
+    var columns = [];
     final response =
         await http.get("https://jsonplaceholder.typicode.com/photos");
     if (response.statusCode == 200) {
@@ -92,9 +91,9 @@ class ReportCard extends StatelessWidget {
       print('Failed to load photos');
     }
 
-    var rows = new List();
+    final rows = [];
     rows.add(columns);
-    final res = ListToCsvConverter().convert(rows);
+    // final res = ListToCsvConverter().convert(rows);
 
     // try {
     //   String url = "data:application/octet-stream;charset=utf-8;,$res";
