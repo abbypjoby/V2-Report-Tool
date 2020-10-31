@@ -4,6 +4,8 @@ import 'package:v2_sales_report_old/presentation/report_generator/reports.dart';
 import 'inputs.dart';
 
 class Dashboard extends StatelessWidget {
+  static const String route = '/dashboard';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

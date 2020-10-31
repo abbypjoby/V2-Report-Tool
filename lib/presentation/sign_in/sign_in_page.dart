@@ -5,6 +5,8 @@ import 'package:v2_sales_report_old/injection.dart';
 import 'package:v2_sales_report_old/presentation/sign_in/widgets/sign_in_form.dart';
 
 class SignInPage extends StatelessWidget {
+  static const String route = '/sign_in';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
