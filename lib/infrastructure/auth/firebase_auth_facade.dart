@@ -8,6 +8,7 @@ import 'package:v2_sales_report_old/domain/auth/auth_failure.dart';
 import 'package:v2_sales_report_old/domain/auth/i_auth_facade.dart';
 import 'package:v2_sales_report_old/domain/auth/user.dart';
 import 'package:v2_sales_report_old/domain/auth/value_objects.dart';
+import './firebase_user_mapper.dart';
 
 @LazySingleton(as: IAuthFacade)
 class FirebaseAuthFacade implements IAuthFacade {
@@ -21,7 +22,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Option<User>> getSignedInUser() async {
-    return Some(null);
+    return optionOf(_firebaseAuth.currentUser?.toDomain());
   }
 
   @override

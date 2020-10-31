@@ -19,11 +19,11 @@ class SplashPage extends StatelessWidget {
           },
           authenticated: (_) {
             log('Authentication Successful, opening report page');
-            Navigator.pushNamed(context, Dashboard.route);
+            Navigator.popAndPushNamed(context, Dashboard.route);
           },
           unauthenticated: (_) {
             log('Unauthenticated, opening Sign In Page');
-            Navigator.pushNamed(context, SignInPage.route);
+            Navigator.popAndPushNamed(context, SignInPage.route);
           },
         );
       },
