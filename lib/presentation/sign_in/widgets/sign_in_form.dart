@@ -32,9 +32,7 @@ class SignInForm extends StatelessWidget {
                 duration: const Duration(seconds: 3),
                 backgroundColor: Colors.green,
               ).show(context);
-              context
-                  .bloc<AuthBloc>()
-                  .add(const AuthEvent.authCheckRequested());
+              Navigator.popAndPushNamed(context, Dashboard.route);
             },
           ),
         );
