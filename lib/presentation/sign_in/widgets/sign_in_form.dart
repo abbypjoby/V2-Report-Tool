@@ -1,7 +1,9 @@
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:v2_sales_report_old/application/auth/auth_bloc.dart';
 import 'package:v2_sales_report_old/application/auth/sign_in_form/sign_in_form_bloc.dart';
+import 'package:v2_sales_report_old/presentation/report_generator/dashboard.dart';
 
 class SignInForm extends StatelessWidget {
   @override
@@ -30,6 +32,9 @@ class SignInForm extends StatelessWidget {
                 duration: const Duration(seconds: 3),
                 backgroundColor: Colors.green,
               ).show(context);
+              context
+                  .bloc<AuthBloc>()
+                  .add(const AuthEvent.authCheckRequested());
             },
           ),
         );

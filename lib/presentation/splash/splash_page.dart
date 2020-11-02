@@ -19,7 +19,7 @@ class SplashPage extends StatelessWidget {
           },
           authenticated: (_) {
             log('Authentication Successful, opening report page');
-            Navigator.popAndPushNamed(context, Dashboard.route);
+            Navigator.pushNamed(context, Dashboard.route);
           },
           unauthenticated: (_) {
             log('Unauthenticated, opening Sign In Page');
