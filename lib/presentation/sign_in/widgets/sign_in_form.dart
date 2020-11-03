@@ -117,6 +117,13 @@ class SignInForm extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              const SizedBox(height: 30),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (state.isSubmitting) const CircularProgressIndicator(),
+                ],
               )
             ],
           ),
